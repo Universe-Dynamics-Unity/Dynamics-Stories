@@ -155,6 +155,10 @@ body, html {
 
 /* Para tablets y celulares (Pantallas menores a 768px) */
 @media (max-width: 768px) {
+    .LoadingName {
+        text-align: center;
+        font-size: 1.8rem; /* Título un poco más pequeño */
+    }
     #main-content {
         height: auto; /* Permite que el contenido crezca hacia abajo */
         padding: 40px 20px;
@@ -172,7 +176,6 @@ body, html {
 
     .story-card {
         width: 100%; /* La tarjeta ocupa todo el ancho disponible */
-        max-width: 320px; /* Pero no se hace gigante */
         height: 300px; /* Un poco más corta para que no ocupe toda la pantalla */
     }
 

@@ -28,3 +28,18 @@ body, html {
         .more-infoFEM {
             color: #8800e2;
         }
+
+/*---------RESPONSIVE--------*/
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+    .music-container {
+        width: 250px;
+        bottom: 10px;
+        right: 10px;
+    }

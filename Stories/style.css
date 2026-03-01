@@ -1,0 +1,41 @@
+/* --- REPRODUCTOR DE MÚSICA RESPONSIVO --- */
+
+/* Estilo para PC (Pantallas grandes) */
+.music-player-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;  /* Tamaño cómodo en PC */
+    height: 90px;
+    background: #000;
+    border-radius: 12px;
+    border: 2px solid #38bdf8;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.music-player-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo para TABLETS (Pantallas medianas) */
+@media (max-width: 1024px) {
+    .music-player-container {
+        width: 280px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Estilo para CELULARES (Pantallas pequeñas) */
+@media (max-width: 480px) {
+    .music-player-container {
+        width: 220px;  /* Más estrecho para que no tape el texto de la historia */
+        height: 70px;  /* Más bajito */
+        bottom: 10px;
+        right: 10px;
+        border-width: 1px; /* Borde más fino para que no se vea tosco */
+    }
+}

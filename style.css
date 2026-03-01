@@ -169,14 +169,22 @@ body, html {
     }
 
     .btn-container {
-        flex-direction: column; /* Las tarjetas se ponen una arriba de otra */
-        align-items: center;
-        gap: 20px;
+       display: flex;
+       flex-wrap: wrap;      /* ¡ESTO evitará que se vean como palitos! */
+       justify-content: center;
+       gap: 30px;
+       padding: 20px;
+       width: 100%;          /* Asegura que use todo el espacio disponible */
+       box-sizing: border-box; 
+       flex-direction: column; /* Las pone una debajo de otra */
+       align-items: center;
     }
-
+    
     .story-card {
-        width: 100%; /* La tarjeta ocupa todo el ancho disponible */
-        height: 300px; /* Un poco más corta para que no ocupe toda la pantalla */
+        width: 90vw;          /* Ocupa el 90% del ancho de la pantalla del móvil */
+        max-width: 300px;     /* Pero no dejes que se vea gigante en tablets */
+        height: 380px;        /* Mantiene su altura original */
+        flex-shrink: 0;       /* PROHIBE que la tarjeta se encoja */
     }
 
     .hello-world {

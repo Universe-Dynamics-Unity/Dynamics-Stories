@@ -18,11 +18,11 @@
 
     <div id="main-content">
     <h1>Bienvenido a <span class="dynamics">Dynamics</span> <span class="stories">Stories</span></h1>
-    <p class="hello-world">¡Aquí puedes elegir la historia que interactiva quieras jugar! Algunas historias tienen en la descripción<br>
+    <p class="hello-world">¡Aquí puedes elegir la historia quieras leer! Algunas historias tienen en la descripción<br>
     tienen un sello que dice "<span class="full-exp-mode">(Full Experience Mode)</span>". ¿No sabes qué es? <a class="more-infoFEM" href="moreInfo/moreInfo-of-FEM.html">más información</a></p>
     
     <div class="btn-container">
-        <a href="Stories/misterio-espacio.html" class="story-card" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=500');">
+        <a href="Stories/DDVR-story/DDVR_Cap1.html" class="story-card" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=500');">
             <div class="card-overlay">
                 <div class="card-info">
                     <h3>¿De Donde Venimos Realmente?</h3>
@@ -31,7 +31,7 @@
             </div>
         </a>
 
-        <a href="Stories/DDVR.html" class="story-card" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500');">
+        <a href="Stories/TLC-story/" class="story-card" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500');">
             <div class="card-overlay">
                 <div class="card-info">
                     <h3>El Código Perdido</h3>
@@ -40,7 +40,7 @@
             </div>
         </a>
 
-        <a href="Stories/cronicas-tiempo.html" class="story-card" style="background-image: url('https://images.unsplash.com/photo-1501139083538-0139583c060f?q=80&w=500');">
+        <a href="Stories/" class="story-card" style="background-image: url('https://images.unsplash.com/photo-1501139083538-0139583c060f?q=80&w=500');">
             <div class="card-overlay">
                 <div class="card-info">
                     <h3>Crónicas del Tiempo</h3>
@@ -49,9 +49,24 @@
             </div>
         </a>
     </div>
+    <button id="btn-continuar" class="choice-btn" style="display:none; margin: 20px auto; background: #eec200; color: #000;">
+    </button>
 </div>
 
+    <script src="GlobalFunctions/storyCore.js"></script>
     <script src="loading.js"></script>
+    <script>
+    // Al cargar el menú, revisamos si existe un archivo de guardado
+    window.onload = () => {
+        const guardado = localStorage.getItem('UDU_Progreso_DDVR');
+        if (guardado) {
+            const btn = document.getElementById('btn-continuar');
+            const datos = JSON.parse(guardado);
+            btn.innerText = "Continuar Capítulo " + datos.capitulo;
+            btn.style.display = "block"; // Solo lo mostramos si hay progreso
+        }
+    };
+    </script>
 
 </body>
 </html>

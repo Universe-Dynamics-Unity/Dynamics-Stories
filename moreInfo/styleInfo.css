@@ -12,6 +12,17 @@ body, html {
     overflow: hidden;
 }
 
+.menu {
+    color: white;
+    background: rgb(0, 228, 121);
+    border: 2px solid #0bad6f;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
 
         .dynamics {
             color: orange;

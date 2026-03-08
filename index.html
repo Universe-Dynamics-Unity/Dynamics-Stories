@@ -26,7 +26,7 @@
             <div class="card-overlay">
                 <div class="card-info">
                     <h3>¿De Donde Venimos Realmente?</h3>
-                    <p>Un misterio sobre la existencia de alguien es más profundo de lo que pensaba. <span class="full-exp-mode">(Full Experience Mode)</span></p>
+                    <p>Un misterio sobre la existencia de alguien es más profundo de lo que pensaba. <span style="color: rgb(24, 175, 125);">Inspirado en Among Us</span> <span class="full-exp-mode">(Full Experience Mode)</span></p>
                 </div>
             </div>
         </a>
@@ -35,7 +35,7 @@
             <div class="card-overlay">
                 <div class="card-info">
                     <h3>El Código Perdido</h3>
-                    <p><span class="Important">[!: Esta historia todavía no está disponible.]</span> Hackea el sistema antes de que sea tarde.</p>
+                    <p><span class="Important">[!: Esta historia todavía no está disponible.]</span> ¡Pronto estará disponible!</p>
                 </div>
             </div>
         </a>
@@ -44,29 +44,44 @@
             <div class="card-overlay">
                 <div class="card-info">
                     <h3>Crónicas del Tiempo</h3>
-                    <p><span class="Important">[!: Esta historia todavía no está disponible.]</span> Viaja al pasado para salvar tu presente.</p>
+                    <p><span class="Important">[!: Esta historia todavía no está disponible.]</span> ¡Pronto estará disponible!</p>
                 </div>
             </div>
         </a>
     </div>
-    <button id="btn-continuar" class="choice-btn" style="display:none; margin: 20px auto; background: #eec200; color: #000;">
+   <button id="btn-continuar" class="choice-btn" onclick="continuarHistoria('DDVR')" style="display:none; margin: 20px auto; background: #eec200; color: #000;">
+    Continuar Capítulo
     </button>
 </div>
 
     <script src="GlobalFunctions/storyCore.js"></script>
     <script src="loading.js"></script>
     <script>
-    // Al cargar el menú, revisamos si existe un archivo de guardado
-    window.onload = () => {
-        const guardado = localStorage.getItem('UDU_Progreso_DDVR');
+    // ESTA FUNCIÓN DEBE ESTAR AFUERA (Global)
+    function continuarHistoria(historiaNombre) {
+        console.log("Intentando continuar historia: " + historiaNombre); // Para ver en consola si funciona
+        const guardado = localStorage.getItem('UDU_Progreso_' + historiaNombre);
+        
         if (guardado) {
-            const btn = document.getElementById('btn-continuar');
+            const datos = JSON.parse(guardado);
+            // Redirige usando la ruta que tienes en GitHub
+            window.location.href = `Stories/${historiaNombre}-story/${historiaNombre}_Cap${datos.capitulo}.html`;
+        } else {
+            alert("No se encontró progreso guardado.");
+        }
+    }
+
+    // Esto solo se encarga de MOSTRAR el botón si hay datos
+    window.addEventListener('load', () => {
+        const guardado = localStorage.getItem('UDU_Progreso_DDVR');
+        const btn = document.getElementById('btn-continuar');
+        
+        if (guardado && btn) {
             const datos = JSON.parse(guardado);
             btn.innerText = "Continuar Capítulo " + datos.capitulo;
-            btn.style.display = "block"; // Solo lo mostramos si hay progreso
+            btn.style.display = "block"; 
         }
-    };
-    </script>
-
+    });
+</script>
 </body>
 </html>

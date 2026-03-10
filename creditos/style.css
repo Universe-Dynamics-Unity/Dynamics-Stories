@@ -90,7 +90,7 @@ body {
 }
 
 /* Color para YouTube */
-.yt { background-color: #ff0000; }
+.yt { background-color: #ff0000; border: 1px solid rgba(255, 255, 255, 0.2); }
 .yt:hover { background-color: #cc0000; transform: scale(1.1); }
 
 /* Color para GitHub */
